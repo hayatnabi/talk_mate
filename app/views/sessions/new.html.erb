@@ -10,30 +10,30 @@
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <form class="ui form">
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) do |f| %>
         <div class="field">
-          <label>Username</label>
+          <%= f.label :username, "Username" %>
           <div class="ui left icon input">
-            <input type="text" placeholder="Username">
+            <%= f.text_field :username, placeholder: "Username" %>
             <i class="user icon"></i>
           </div>
         </div>
         <div class="field">
-          <label>Password</label>
+          <%= f.label :password, "Password" %>
           <div class="ui left icon input">
-            <input type="password" placeholder="Password" id="password-field">
-            <i class="lock icon" onclick="togglePasswordVisibility()"></i>
+            <%= f.password_field :password, placeholder: "Password" %>
+            <i class="key icon" onclick="togglePasswordVisibility()" style="cursor: pointer;"></i>
+            <script>
+              function togglePasswordVisibility() {
+                const passwordField = document.querySelector('input[type="password"]');
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+              }
+            </script>
           </div>
-          <script>
-            function togglePasswordVisibility() {
-              const passwordField = document.getElementById('password-field');
-              const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-              passwordField.setAttribute('type', type);
-            }
-          </script>
         </div>
-        <button class="ui blue submit button">Login</button>
-      </form>
+        <%= f.button "Login", class: "ui blue submit button" %>
+      <% end %>
     </div>
     <div class="middle aligned column">
       <div class="ui big green button">
