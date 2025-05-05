@@ -2,15 +2,19 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "semantic-ui"
-
+import "semantic-ui-css/components/transition.js"; // Ensure the transition module is imported
 
 $(function() {
     $('.ui.dropdown').dropdown();
 
 }); 
-// $(document).on('turbo:load', function(){ //     $('.ui.dropdown').dropdown(); // }) 
 
 $(document).on('turbo:load', function() {
     $('.ui.dropdown').dropdown();
     $('.ui.modal').modal();
-})
+
+    // Ensure the close button works for flash messages
+    $(document).on('click', '.message .close', function() {
+        $(this).closest('.message').transition('fade');
+    });
+});
