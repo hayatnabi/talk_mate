@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"
+  get "logout" => "sessions#destroy"
   delete "logout" => "sessions#destroy"
   post "message" => "messages#create"
 
-  # mount ActionCable.server, at: '/cable'
+  mount ActionCable.server, at: "/cable"
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
