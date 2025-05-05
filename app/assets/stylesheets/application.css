@@ -17,3 +17,7 @@
 :root {
     --primary-color: #3498db;
 }
+
+.chatbox {
+    height: 450px;
+}

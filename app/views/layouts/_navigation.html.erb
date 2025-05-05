@@ -1,18 +1,16 @@
 <div class="header item" style="pointer-events: none; cursor: default;">
   <span style="color: white;">Talk</span><span style="color: skyblue;">Mate</span>
 </div>
-<a class="item">
-  Home
-</a>
-<a class="item">
+<%= link_to "Chaatroom", root_path, class: "item" %>
+<%# <a class="item">
   Messages
-</a>
+</a> %>
 <div class="right menu">
   <div class="ui dropdown item">
     Account <i class="dropdown icon"></i>
     <div class="menu">
-      <a class="item">Login Account</a>
-      <a class="item" style="color: red !important;">Delete Account</a>
+      <%= link_to "Login", login_path, class: "item" %>
+      <a class="item" style="color: red !important;">Logout</a>
     </div>
   </div>
   <div class="item">
