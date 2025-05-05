@@ -13,3 +13,7 @@
  *= require semantic-ui
  */
 
+/* Add your custom styles here */
+:root {
+    --primary-color: #3498db;
+}
