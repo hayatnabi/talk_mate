@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "logout" => "sessions#destroy"
   delete "logout" => "sessions#destroy"
   post "message" => "messages#create"
+  get "chatroom" => "chatroom#index"
 
   mount ActionCable.server, at: "/cable"
 
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "chatroom#index"
+  root "pages#home"
 end
