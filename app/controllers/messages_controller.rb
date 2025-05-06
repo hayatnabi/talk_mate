@@ -21,8 +21,7 @@ class MessagesController < ApplicationController
     @message = current_user.messages.build(message_params)
 
     if @message.save
-      # render json: @message, status: :created, location: @message
-      redirect_to chatroom_path
+      ActionCable.server.broadcast "chatroom_channel", foo: message.body
     else
       render json: @message.errors, status: :unprocessable_entity
     end
