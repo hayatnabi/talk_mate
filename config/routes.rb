@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
   delete "logout" => "sessions#destroy"
-  post "message" => "messages#create"
   get "chatroom" => "chatroom#index"
   post "message" => "messages#create"
 
