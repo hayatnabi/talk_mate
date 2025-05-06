@@ -1,5 +1,5 @@
 class ChatroomController < ApplicationController
-  # before_action :require_user, only: [:index]
+  before_action :require_user # , only: [:index]
 
   def index
     @message = Message.new
