@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   post "message" => "messages#create"
   get "chatroom" => "chatroom#index"
+  post "message" => "messages#create"
 
   mount ActionCable.server, at: "/cable"
 

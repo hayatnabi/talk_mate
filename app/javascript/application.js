@@ -6,7 +6,9 @@ import "semantic-ui-css/components/transition.js"; // Ensure the transition modu
 
 $(function() {
     $('.ui.dropdown').dropdown();
-
+    $(document).on('click', '.message .close', function() {
+        $(this).closest('.message').transition('fade');
+    });
 }); 
 
 $(document).on('turbo:load', function() {
