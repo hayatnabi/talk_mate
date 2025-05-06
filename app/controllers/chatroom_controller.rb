@@ -6,18 +6,18 @@ class ChatroomController < ApplicationController
     @messages = Message.all
   end
 
-  # def create
-  #   message = Message.create(message_params)
-  #   ActionCable.server.broadcast "chatroom_channel", message: message_render(message)
-  # end
+  def create
+    message = Message.create(message_params)
+    ActionCable.server.broadcast("chatroom_channel", { message: message_render(message) })
+  end
 
-  # private
+  private
 
-  # def message_params
-  #   params.require(:message).permit(:content).merge(user_id: current_user.id)
-  # end
+  def message_params
+    params.require(:message).permit(:body) # .merge(user_id: current_user.id)
+  end
 
-  # def message_render(message)
-  #   ApplicationController.renderer.render(partial: 'message', locals: { message: message })
-  # end
+  def message_render(message)
+    ApplicationController.renderer.render(partial: "message", locals: { message: message })
+  end
 end
