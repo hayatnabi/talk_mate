@@ -63,8 +63,8 @@ $(document).on('turbo:load', function() {
 // }
 
 scroll_bottom = function() {
-    if ($('#messages').length > 0) {
-        $('#messages').scrollTop($('#messages')[0].scrollHeight);
+    if ($('div#messages').length > 0) {
+        $('div#messages').scrollTop($('div#messages')[0].scrollHeight);
     }
 }
 
