@@ -7,26 +7,11 @@ import "channels"
 
 $(function() {
     $('.ui.dropdown').dropdown();
-    // $(document).on('click', '.message .close', function() {
-    //     $(this).closest('.message').transition('fade');
-    // });
-    $('.message .close').on('click', function() {
-        $(this).closest('.message').transition('fade');
-    });
 });
 
 $(document).on('turbo:load', function() {
     $('.ui.dropdown').dropdown();
     $('.ui.modal').modal();
-
-    // Ensure the close button works for flash messages
-    // $(document).on('click', '.message .close', function() {
-    //     $(this).closest('.message').transition('fade');
-    // });
-
-    $('.message .close').on('click', function() {
-        $(this).closest('.message').transition('fade');
-    });
 
     // submit_message();
 
