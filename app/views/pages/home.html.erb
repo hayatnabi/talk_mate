@@ -12,18 +12,45 @@
 <div class="features-section" style="padding: 0px; text-align: center; width: 100vw; margin-left: calc(-50vw + 50%);">
   <h2 style="font-size: 2rem; margin-bottom: 20px; margin-top: 8px;">Why Choose TalkMate?</h2>
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-    <div style="flex: 1; max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-      <h3 style="font-size: 1.5rem;">Easy to Use</h3>
-      <p>Intuitive design that makes communication effortless.</p>
+    <div class="ui card" style="margin-top: 16px; flex: 1; max-height: 300px; max-width: 300px; padding: 20px; border-radius: 10px; transition: background 0.3s ease, transform 0.3s ease; cursor: pointer;">
+      <div class="content" style="text-align: center;">
+        <h3 style="font-size: 1.5rem;">Easy to Use</h3>
+        <p>Intuitive design that makes communication effortless.</p>
+      </div>
     </div>
-    <div style="flex: 1; max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-      <h3 style="font-size: 1.5rem;">Secure</h3>
-      <p>Top-notch security to keep your conversations private.</p>
+    <style>
+      .ui.card:hover {
+        background: linear-gradient(135deg, #ff7f50, #ffcc00);
+        color: white;
+        transform: rotateX(15deg) rotateY(15deg);
+      }
+    </style>
+    <div class="ui card" style="flex: 1; max-height: 300px; max-width: 300px; padding: 20px; border-radius: 10px; transition: background 0.3s ease, transform 0.3s ease; cursor: pointer;">
+      <div class="content" style="text-align: center;">
+        <h3 style="font-size: 1.5rem;">Secure</h3>
+        <p>Top-notch security to keep your conversations private.</p>
+      </div>
     </div>
-    <div style="flex: 1; max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-      <h3 style="font-size: 1.5rem;">Collaborative</h3>
-      <p>Tools to help you work better with your team.</p>
+    <style>
+      .ui.card:nth-child(2):hover {
+        background: linear-gradient(225deg, #34ebba, #1e90ff);
+        color: white;
+        transform: rotateX(-15deg) rotateY(-15deg);
+      }
+    </style>
+    <div class="ui card" style="flex: 1; max-height: 300px; max-width: 300px; padding: 20px; border-radius: 10px; transition: background 0.3s ease, transform 0.3s ease; cursor: pointer;">
+      <div class="content" style="text-align: center;">
+        <h3 style="font-size: 1.5rem;">Collaborative</h3>
+        <p>Tools to help you work better with your team.</p>
+      </div>
     </div>
+    <style>
+      .ui.card:nth-child(3):hover {
+        background: linear-gradient(315deg, #ff6f61, #ffcc00);
+        color: white;
+        transform: rotateX(10deg) rotateY(-10deg);
+      }
+    </style>
   </div>
 </div>
 <div class="image-section" style="text-align: center; width: 100vw; margin-left: calc(-50vw + 50%);">
