@@ -13,10 +13,13 @@ consumer.subscriptions.create("ChatroomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    // Append the new message to the chatbox
-    // alert(data.foo);
-    // $('#message-container').append(data.mod_message)
+    console.log("Received data:", data);
     const messagesContainer = document.getElementById("message-container");
-    messagesContainer.insertAdjacentHTML("beforeend", data.message);
+    if (messagesContainer) {
+      messagesContainer.insertAdjacentHTML("beforeend", data.message);
+      scroll_bottom();
+    } else {
+      console.error("Message container not found");
+    }
   }
 });
