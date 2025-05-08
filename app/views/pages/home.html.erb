@@ -25,22 +25,31 @@
       }
 
       @keyframes gradAnimBtnGetStarted {
-          0% {
-      background-position: 0% 50%;
-          }
+        0% {
+            background-position: 0% 50%;
+        }
 
-          50% {
-      background-position: 100% 50%;
-          }
+        50% {
+            background-position: 100% 50%;
+        }
 
-          100% {
-      background-position: 0% 50%;
-          }
+        100% {
+            background-position: 0% 50%;
+        }
       }
     </style>
   <% else %>
     <%= link_to "Go to Chatroom", chatroom_path, class: "item chatroom-button", style: "text-decoration: none; background-color: #ff7f50; color: white; padding: 15px 30px; font-size: 1.2rem; border-radius: 5px;" %>
     <style>
+      .chatroom-button:hover {
+            background: linear-gradient(135deg, #ff6f61, #ffcc00, #ff0000, #ff6f61);
+            background-size: 300% 300%;
+            animation: gradAnimBtnChatroom 3s ease 1 forwards;
+            transform: translateY(-5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.69);
+      }
+
       @keyframes gradAnimBtnChatroom {
         0% {
             background-position: 0% 50%;
@@ -51,15 +60,6 @@
         100% {
             background-position: 0% 50%;
         }
-      }
-
-      .chatroom-button:hover {
-          background: linear-gradient(135deg, #ff6f61, #ffcc00, #ff0000, #ff6f61);
-          background-size: 300% 300%;
-          animation: gradAnimBtnChatroom 3s ease 1 forwards;
-          transform: translateY(-5px);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.69);
       }
     </style>
   <% end %>
@@ -112,6 +112,40 @@
   <%# <%= image_tag "collab.avif", alt: "Collaboration Image", style: "max-width: 100%; height: auto; border-radius: 10px;" %>
   <img src="https://img.freepik.com/premium-vector/people-engaged-dialog-with-idea-bubbles-illustrating-concepts_1263357-34853.jpg?w=740" alt="Communication Image" style="max-width: 100%; height: auto; border-radius: 10px;">
 </div>
+<div class="cursor-circle">
+  <div class="cursor-dot"></div>
+</div>
+<style>
+  .cursor-circle {
+          position: fixed;
+          width: 50px;
+          height: 50px;
+          border: 2px solid #d3d3d3; /* Light gray border */
+          border-radius: 50%;
+          pointer-events: none;
+          transform: translate(-50%, -50%);
+          z-index: 1000;
+          transition: transform 0.1s ease;
+  }
+
+  .cursor-dot {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: #add8e6; /* Light blue dot */
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+  }
+</style>
+<script>
+  document.addEventListener("mousemove", (event) => {
+      const cursorCircle = document.querySelector(".cursor-circle");
+      cursorCircle.style.left = `${event.pageX}px`;
+      cursorCircle.style.top = `${event.pageY}px`;
+  });
+</script>
 <footer id="footer" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f9f9f9; text-align: center; padding: 20px;">
   <p style="font-size: 1rem; color: #555;">&copy; 2025 TalkMate<span style="font-size: 0.8rem; vertical-align: super;">&reg;</span>. All rights reserved.</p>
 </footer>
