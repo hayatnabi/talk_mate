@@ -151,14 +151,14 @@
 
   document.addEventListener("mouseover", (event) => {
           const cursorCircle = document.querySelector(".cursor-circle");
-          if (event.target.classList.contains("chatroom-button")) {
+          if (event.target.classList.contains("chatroom-button") || event.target.classList.contains("get-started-button")) {
                   cursorCircle.classList.add("hide-cursor");
           }
   });
 
   document.addEventListener("mouseout", (event) => {
           const cursorCircle = document.querySelector(".cursor-circle");
-          if (event.target.classList.contains("chatroom-button")) {
+          if (event.target.classList.contains("chatroom-button") || event.target.classList.contains("get-started-button")) {
                   cursorCircle.classList.remove("hide-cursor");
           }
   });
